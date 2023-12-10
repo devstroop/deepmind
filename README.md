@@ -58,13 +58,13 @@ You can send a text prompt with an image to the gemini-pro-vision model to perfo
 ```
 
 
-## Gemini Response
+## DeepMind Response
 
 ```dart
 // In progress
 ```
 
-## Gemini Methods
+## DeepMind Methods
 
 ```dart
 // In progress
