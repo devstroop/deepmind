@@ -1,52 +1,13 @@
 
-/// The Response from the Google Generativeai can hold multiple candidates
-/// This class is used to create a instance of a candidate
-class GeminiHttpResponseCandidate {
-
-  final String? finishReason;
-  final int index;
-  Map<String, dynamic>? content = {
-    "parts": [],
-    "role": "model"
-  };
-  final List safetyRatings;
-
-  GeminiHttpResponseCandidate({
-    this.finishReason,
-    required this.index,
-    this.content,
-    required this.safetyRatings
-  });
-
-  /// Create a GeminiHttpResponseCandidate from a json
-  factory GeminiHttpResponseCandidate.fromJson(Map<String, dynamic> json) {
-    return GeminiHttpResponseCandidate(
-        finishReason: json['finishReason'],
-        index: json['index'],
-        content: json['content'],
-        safetyRatings: json['safetyRatings']
-    );
-  }
-
-  /// Convert a GeminiHttpResponseCandidate to a json
-  Map<String, dynamic> toJson() {
-    return {
-      'finishReason': finishReason,
-      'index': index,
-      'content': content,
-      'safetyRatings': safetyRatings
-    };
-  }
-
-}
 
 
+import 'deep_response_candidate.dart';
 
 /// Format the response from the google generativeai server into a more readable format
 /// This class is used to create a instance of GeminiHttpResponse from http response
 class DeepResponse{
 
-  final List<GeminiHttpResponseCandidate> candidates;
+  final List<DeepResponseCandidate> candidates;
   Map<String, dynamic>? promptFeedback = {
     "safetyRatings": []
   };
@@ -60,9 +21,9 @@ class DeepResponse{
   /// populates the candidates list from the json
   /// populates the promptFeedback from the json
   factory DeepResponse.fromJson(Map<String, dynamic> json) {
-    List<GeminiHttpResponseCandidate> responseCandidates = [];
+    List<DeepResponseCandidate> responseCandidates = [];
     for (var candidate in json['candidates']) {
-      responseCandidates.add(GeminiHttpResponseCandidate.fromJson(candidate));
+      responseCandidates.add(DeepResponseCandidate.fromJson(candidate));
     }
     return DeepResponse(
         candidates: responseCandidates,

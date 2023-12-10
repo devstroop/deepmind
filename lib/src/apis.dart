@@ -1,8 +1,6 @@
 import 'dart:convert';
 import 'dart:developer';
-
 import 'package:http/http.dart' as http;
-
 import 'constants.dart';
 import 'models/deep_response.dart';
 

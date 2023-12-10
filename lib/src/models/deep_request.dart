@@ -1,13 +1,14 @@
 import 'dart:developer';
+import '../apis.dart';
 import 'deep_response.dart';
 
 /// Google Gemini Main Class.
-class GoogleGemini {
+class DeepRequest {
 
   String apiKey; // The API Key from Google
   String? model = 'gemini-pro'; // The model to use, gemini-pro by default
 
-  GoogleGemini({
+  DeepRequest({
     required this.apiKey,
     this.model
   });

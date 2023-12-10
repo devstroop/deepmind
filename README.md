@@ -1,39 +1,71 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# Google DeepMind Gemini
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+Google DeepMind is a set of cutting-edge large language models (LLMs) designed to be the driving force behind Google's future AI initiatives.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
+<img  alt="Gemini " src="https://raw.githubusercontent.com/ged-flod/google_gemini/main/assets/gemini.jpeg"/>
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+This package provides a powerful bridge between your Flutter application and Google's revolutionary Gemini AI. It empowers you to seamlessly integrate Gemini's capabilities into your app, unlocking a world of possibilities for building innovative, intelligent, and engaging experiences that redefine user interaction.
+
+
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- [x] [Get Stated](#getting-started)
+- [x] [Create DeepRequest Instance](#create-deepmind-instance)
+- [ ] [Generate content](#generate-content)
+    - [x] [Text only input](#text-only-input)
+    - [ ] [Text and image input](#text-and-image-input)
+- [ ] [DeepResponse](#gemini-response)
+- [ ] [Gemini Methods](#gemini-methods)
+
+
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+To get the API key you have to create a Gemini account on the [ai.google.dev](https://ai.google.dev/). Once you have to Gemini API key, you are ready to start building.
 
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+## Create Gemini Instance
 
 ```dart
-const like = 'sample';
+final request = DeepRequest(
+    apiKey: "--- Your Gemini Api Key --- ", // Replace this
+    model: "gemini-pro"
+);
 ```
 
-## Additional information
+## Generate content
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+With Gemini you use both text and image data for prompting, depending on what model variation you use.
+
+For example, you can generate text using text prompt with the gemini-pro model and use both text and image data to prompt the gemini-pro-vision model
+
+### Text only input
+
+This feature lets you perform natural language processing (NLP) tasks such as text completion and summarization.
+
+```dart
+request.generateText("Tell me a story").then((response){
+    print(response)
+})
+```
+
+### Text and image input
+
+You can send a text prompt with an image to the gemini-pro-vision model to perform a vision related task. For example, captioning an image or identifying what's in an image.
+
+```dart
+// In progress
+```
+
+
+## Gemini Response
+
+```dart
+// In progress
+```
+
+## Gemini Methods
+
+```dart
+// In progress
+```
